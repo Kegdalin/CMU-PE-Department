@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMU | Department of Physical Education</title>
+<style>
+:root{--green:#14532d;--gold:#e5b94f;--light:#f5f8f5}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#24332a;line-height:1.6}
+header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px #0002}
+.nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 22px;gap:20px}
+.brand{font-weight:800;color:var(--green);font-size:17px}
+.brand small{display:block;font-size:12px;font-weight:400}
+nav{display:flex;flex-wrap:wrap;gap:16px}
+nav a{color:#24332a;text-decoration:none;font-size:14px}
+nav a:hover{color:#16834b}
+.hero{min-height:410px;background:linear-gradient(120deg,#0b3629ed,#135638d9),url('images/department.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:45px 20px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.15;margin:10px 0}
+.hero p{max-width:650px;margin:15px auto}
+.btn{display:inline-block;background:var(--gold);color:#203525;text-decoration:none;border:0;border-radius:6px;padding:11px 22px;font-weight:bold;cursor:pointer}
+section{padding:65px 22px;scroll-margin-top:90px}
+.wrap{max-width:1150px;margin:auto}
+h2{color:var(--green);font-size:30px;margin:0 0 22px}
+h3{color:var(--green)}
+.muted{color:#617166}
+.alt{background:var(--light)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:#fff;border:1px solid #e2e9e2;border-radius:12px;padding:25px;box-shadow:0 3px 12px #00000009}
+.card h3{margin-top:0}
+.banner{background:#174b32;color:white;padding:35px;border-radius:12px}
+.banner h2{color:white}
+.faculty{display:grid;grid-template-columns:180px 1fr;gap:25px;align-items:center;margin:20px 0}
+.portrait{width:180px;height:190px;background:#e3ebe4;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#647669;text-align:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.tag{display:inline-block;background:#e4f1e7;padding:5px 12px;border-radius:20px;color:var(--green);font-size:12px}
+footer{background:#103c29;color:#fff;padding:35px 22px;text-align:center}
+footer a{color:#f3d277}
+input{width:100%;padding:12px;border:1px solid #ccd8cf;border-radius:6px;margin-bottom:10px}
+@media(max-width:800px){.nav{flex-direction:column;align-items:flex-start}nav{gap:10px}.grid{grid-template-columns:1fr}.faculty{grid-template-columns:1fr}.hero{min-height:350px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav">
+<div class="brand">CENTRAL MINDANAO UNIVERSITY
+<small>Department of Physical Education</small></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#programs">Programs</a>
+<a href="#faculty">Faculty</a>
+<a href="#research">Research</a>
+<a href="#news">News</a>
+<a href="#resources">Resources</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div>
+<span class="tag">College of Education</span>
+<h1>Department of Physical Education</h1>
+<p>Central Mindanao University<br>Musuan, Maramag, Bukidnon, Philippines</p>
+<p>Promoting excellence in physical education, movement, wellness, and lifelong learning.</p>
+<a class="btn" href="#programs">Explore Our Programs</a>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap">
+<h2>About the Department</h2>
+<p>Welcome to the Department of Physical Education at Central Mindanao University. Explore our academic programs, faculty, research initiatives, and department activities.</p>
+<div class="grid">
+<div class="card"><h3>Our Vision</h3><p>Official department vision to be added.</p></div>
+<div class="card"><h3>Our Mission</h3><p>Official department mission to be added.</p></div>
+<div class="card"><h3>Our Objectives</h3><p>Official department objectives to be added.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="programs">
+<div class="wrap">
+<h2>Academic Programs</h2>
+<div class="banner">
+<h2>Bachelor of Physical Education</h2>
+<p>Learn about the BPEd program, its curriculum, learning outcomes, and professional preparation.</p>
+</div>
+<h3>Program Outcomes</h3>
+<p>The approved CMU BPEd program outcomes will be published here.</p>
+<div class="grid">
+<div class="card"><h3>Disciplinary Knowledge</h3><p>Knowledge of physical education concepts, theories, and evidence-based practices.</p></div>
+<div class="card"><h3>Movement Competency</h3><p>Development of movement skills and proficiency in different physical activities.</p></div>
+<div class="card"><h3>Program Planning</h3><p>Planning, implementation, and evaluation of physical education learning experiences.</p></div>
+</div>
+</div>
+</section>
+
+<section id="faculty">
+<div class="wrap">
+<h2>Faculty and Staff</h2>
+<p class="muted">Meet the academic personnel of the Department of Physical Education.</p>
+<div class="card faculty">
+<div class="portrait">Faculty Photo</div>
+<div>
+<h3>Department Chairperson</h3>
+<p><strong>Name:</strong> To be added</p>
+<p><strong>Position:</strong> Department Chairperson</p>
+<p><strong>Specialization:</strong> To be added</p>
+</div>
+</div>
+<div class="card faculty">
+<div class="portrait">Faculty Photo</div>
+<div>
+<h3>Faculty Member</h3>
+<p><strong>Name:</strong> To be added</p>
+<p><strong>Position:</strong> Faculty</p>
+<p><strong>Specialization:</strong> To be added</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="research">
+<div class="wrap">
+<h2>Research and Extension</h2>
+<div class="grid">
+<div class="card"><h3>Research Projects</h3><p>Department research activities, studies, and scholarly outputs.</p></div>
+<div class="card"><h3>Extension Programs</h3><p>Community engagement, outreach, and physical activity initiatives.</p></div>
+<div class="card"><h3>Publications</h3><p>Faculty publications and academic contributions.</p></div>
+</div>
+</div>
+</section>
+
+<section id="news">
+<div class="wrap">
+<h2>News and Events</h2>
+<div class="grid">
+<div class="card"><span class="tag">Announcement</span><h3>Department Updates</h3><p>Official announcements will appear here.</p></div>
+<div class="card"><span class="tag">Events</span><h3>Upcoming Activities</h3><p>Department events and activities will appear here.</p></div>
+<div class="card"><span class="tag">Achievements</span><h3>Department Highlights</h3><p>Faculty and student achievements will appear here.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="resources">
+<div class="wrap">
+<h2>Learning Resources and Forms</h2>
+<p>Access approved public department documents and learning materials.</p>
+<div class="grid">
+<div class="card"><h3>Learning Guides</h3><p>Learning materials and instructional resources.</p><a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer">Google Drive</a></div>
+<div class="card"><h3>Department Forms</h3><p>Download publicly approved department forms.</p><a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer">Google Drive</a></div>
+<div class="card"><h3>Curriculum Documents</h3><p>Approved curriculum and academic references.</p><p class="muted">Documents to be uploaded.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<h2>Contact Us</h2>
+<p><strong>Department of Physical Education</strong><br>College of Education<br>Central Mindanao University<br>Musuan, Maramag, Bukidnon, Philippines</p>
+<p>Official department email and contact details to be added.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<strong>Central Mindanao University</strong>
+<p>Department of Physical Education</p>
+<p>© <span id="year"></span> CMU PE Department. Department website prototype.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
