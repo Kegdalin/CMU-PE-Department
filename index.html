@@ -12,6 +12,7 @@
   --green: #063e23;
   --gold: #edb83c;
   --ink: #173329;
+  --light: #f5f7f5;
 }
 
 * {
@@ -26,7 +27,7 @@ body {
   margin: 0;
   font: 16px/1.5 Arial, Helvetica, sans-serif;
   color: var(--ink);
-  background: #f5f7f5;
+  background: var(--light);
 }
 
 /* HEADER */
@@ -57,12 +58,14 @@ header {
   align-items: center;
   gap: 14px;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 .header-logos {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .header-logos img {
@@ -105,11 +108,12 @@ nav a {
   font-size: 13px;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: var(--gold);
 }
 
-/* HERO */
+/* HERO BANNER */
 
 .hero {
   background:
@@ -147,33 +151,6 @@ nav a:hover {
   max-width: 660px;
 }
 
-/* BUTTONS */
-
-.button {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--ink);
-  text-decoration: none;
-  padding: 12px 22px;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 12px;
-  transition: background 0.2s;
-}
-
-.button:hover {
-  background: #ffd777;
-}
-
-.button-green {
-  background: var(--green);
-  color: white;
-}
-
-.button-green:hover {
-  background: #12683e;
-}
-
 /* GENERAL SECTIONS */
 
 .wrap {
@@ -209,12 +186,36 @@ section p {
   white-space: normal;
 }
 
-.panel {
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  margin: 16px 0;
-  box-shadow: 0 3px 15px #0000000a;
+/* ABOUT SECTION */
+
+#about {
+  background: #f5f7f5;
+}
+
+/* BUTTONS */
+
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #ffd777;
+}
+
+.button-green {
+  background: var(--green);
+  color: white;
+}
+
+.button-green:hover {
+  background: #12683e;
 }
 
 /* PROSPECTUS */
@@ -228,11 +229,7 @@ section p {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 20px #00000012;
-}
-
-.prospectus-card h3 {
-  font-size: 25px;
-  margin-top: 0;
+  margin-top: 25px;
 }
 
 .prospectus-stats {
@@ -261,6 +258,8 @@ section p {
   color: #5d6c62;
 }
 
+/* PDF BUTTONS */
+
 .pdf-actions {
   display: flex;
   flex-wrap: wrap;
@@ -271,6 +270,8 @@ section p {
 .pdf-actions .button {
   margin-top: 0;
 }
+
+/* PDF VIEWER */
 
 .pdf-preview {
   background: #f2f5f2;
@@ -301,11 +302,20 @@ footer {
   color: white;
   text-align: center;
   padding: 30px 20px;
+  font-size: 13px;
 }
 
-/* TABLET AND MOBILE */
+/* ACCESSIBILITY */
+
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* TABLET */
 
 @media (max-width: 900px) {
+
   .nav {
     flex-direction: column;
     align-items: flex-start;
@@ -316,7 +326,10 @@ footer {
   }
 }
 
+/* MOBILE */
+
 @media (max-width: 750px) {
+
   .nav {
     padding: 12px 16px;
   }
@@ -359,6 +372,10 @@ footer {
     padding: 35px 18px;
   }
 
+  h2 {
+    font-size: 25px;
+  }
+
   .prospectus-card {
     padding: 20px;
   }
@@ -380,6 +397,7 @@ footer {
     text-align: center;
   }
 }
+
 </style>
 </head>
 
@@ -390,9 +408,12 @@ footer {
 <header>
   <div class="nav">
 
+    <!-- UNIVERSITY BRANDING -->
+
     <div class="brand">
 
       <div class="header-logos">
+
         <img
           src="images/cmu-logo.png"
           alt="Central Mindanao University Logo"
@@ -402,6 +423,7 @@ footer {
           src="images/educ-logo.png"
           alt="College of Education Logo"
         >
+
       </div>
 
       <div class="brand-text">
@@ -411,14 +433,34 @@ footer {
 
     </div>
 
+    <!-- NAVIGATION BAR -->
+
     <nav aria-label="Main navigation">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="programs.html">BPEd Program</a>
-      <a href="faculty.html">Faculty &amp; Staff</a>
-      <a href="index.html#research">Research</a>
-      <a href="index.html#resources">Resources</a>
-      <a href="index.html#contact">Contact</a>
+
+      <a
+        href="index.html#home"
+        class="active"
+        aria-current="page"
+      >
+        Home
+      </a>
+
+      <a href="index.html#about">
+        About
+      </a>
+
+      <a href="programs.html">
+        BPEd Program
+      </a>
+
+      <a href="faculty.html">
+        Faculty &amp; Staff
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </nav>
 
   </div>
@@ -426,7 +468,7 @@ footer {
 
 <main>
 
-<!-- HOMEPAGE -->
+<!-- HOMEPAGE BANNER -->
 
 <section class="hero" id="home">
 
@@ -442,18 +484,22 @@ footer {
 
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT THE DEPARTMENT -->
 
 <section id="about">
+
   <div class="wrap">
 
     <h2>About the Department</h2>
 
     <p class="intro">
-      Welcome to the Department of Physical Education at Central Mindanao University. Explore our programs, faculty, activities, and learning resources.
+      Welcome to the Department of Physical Education
+      at Central Mindanao University. Explore our
+      programs, faculty, activities, and learning resources.
     </p>
 
   </div>
+
 </section>
 
 <!-- BPEd PROSPECTUS -->
@@ -528,6 +574,8 @@ footer {
 
       </div>
 
+      <!-- PDF NOTES -->
+
       <p class="pdf-note">
         You may read the prospectus directly above
         or use the Download button to save a copy
@@ -536,9 +584,11 @@ footer {
 
       <p class="pdf-note">
         If the document does not display,
-        <a href="BPED-Prospectus-2023.pdf"
-           target="_blank"
-           rel="noopener">
+        <a
+          href="BPED-Prospectus-2023.pdf"
+          target="_blank"
+          rel="noopener"
+        >
           open the Prospectus PDF here.
         </a>
       </p>
@@ -549,70 +599,19 @@ footer {
 
 </section>
 
-<!-- RESEARCH -->
-
-<section id="research" style="background:#eaf1ec">
-
-  <div class="wrap">
-
-    <h2>Research and Extension</h2>
-
-    <p>
-      Approved research publications and extension
-      activities will be added here.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- RESOURCES -->
-
-<section id="resources">
-
-  <div class="wrap">
-
-    <h2>Learning Resources and Forms</h2>
-
-    <p>
-      Approved public learning guides, forms,
-      and curriculum documents will be linked here.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" style="background:#eaf1ec">
-
-  <div class="wrap">
-
-    <h2>Contact</h2>
-
-    <p>
-      College of Education
-      <br>
-      Department of Physical Education
-      <br>
-      Central Mindanao University
-      <br>
-      Musuan, Maramag, Bukidnon, Philippines
-    </p>
-
-  </div>
-
-</section>
-
 </main>
 
 <!-- FOOTER -->
 
 <footer>
-  CMU Physical Education Department ·
-  <span id="year"></span>
+
+  &copy; <span id="year"></span>
+  Central Mindanao University |
+  Department of Physical Education
+
 </footer>
+
+<!-- AUTOMATIC YEAR -->
 
 <script>
   document.getElementById("year").textContent =
