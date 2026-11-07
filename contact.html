@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | CMU Physical Education Department</title>
+
+<style>
+:root {
+  --green: #063e23;
+  --gold: #edb83c;
+  --ink: #173329;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: #f5f7f5;
+}
+
+/* HEADER */
+
+header {
+  background: var(--green);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 10px #0002;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-logos {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.header-logos img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brand-text strong {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brand-text small {
+  font-size: 12px;
+  color: #d7e7da;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold);
+}
+
+/* HERO BANNER */
+
+.hero {
+  background:
+    linear-gradient(
+      rgba(0,35,20,0.55),
+      rgba(0,35,20,0.55)
+    ),
+    url("images/pe%20banner.jpg");
+
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: center;
+  min-height: 350px;
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* CONTACT CONTENT */
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 55px 20px 75px;
+}
+
+.contact-panel {
+  background: white;
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 8px 28px #00000018;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 45px;
+}
+
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-sidebar a {
+  background: #f0f1f1;
+  padding: 15px 18px;
+  border-radius: 12px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contact-sidebar a:hover,
+.contact-sidebar a.active {
+  background: var(--green);
+  color: white;
+}
+
+.contact-content {
+  padding: 35px 10px;
+  text-align: center;
+  min-width: 0;
+}
+
+.contact-content h2 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: var(--green);
+  margin: 0 0 15px;
+}
+
+.contact-subtitle {
+  color: #65746b;
+  margin-bottom: 30px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  border: 1px solid #e1e5e1;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  min-width: 0;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #176b2d;
+  color: #176b2d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.contact-card strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.contact-card a,
+.contact-card span {
+  color: #46554b;
+  font-size: 14px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-logos img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .brand-text small {
+    font-size: 11px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 300px;
+  }
+
+  .contact-panel {
+    padding: 20px;
+  }
+
+  .contact-content {
+    padding: 20px 0;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="nav">
+
+    <div class="brand">
+
+      <div class="header-logos">
+        <img src="images/cmu-logo.png"
+             alt="CMU Logo">
+
+        <img src="images/educ-logo.png"
+             alt="College of Education Logo">
+      </div>
+
+      <div class="brand-text">
+        <strong>CENTRAL MINDANAO UNIVERSITY</strong>
+        <small>College of Education</small>
+      </div>
+
+    </div>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="programs.html">BPEd Program</a>
+      <a href="faculty.html">Faculty &amp; Staff</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="contact.html" class="active"
+         aria-current="page">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO BANNER -->
+
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p>Department of Physical Education</p>
+  <p>College of Education · Central Mindanao University</p>
+</section>
+
+<!-- CONTACT INFORMATION -->
+
+<main>
+
+  <div class="contact-panel">
+
+    <aside class="contact-sidebar">
+      <a href="index.html#about">About Us</a>
+      <a href="programs.html">BPEd Program</a>
+      <a href="faculty.html">Faculty &amp; Staff</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="contact.html" class="active">Contact Us</a>
+    </aside>
+
+    <div class="contact-content">
+
+      <h2>CONTACT US</h2>
+
+      <p class="contact-subtitle">
+        Have questions? We'd love to hear from you.
+      </p>
+
+      <div class="contact-cards">
+
+        <div class="contact-card">
+          <div class="contact-icon">&#9993;</div>
+          <div>
+            <strong>EMAIL</strong>
+            <a href="mailto:pedepartment@cmu.edu.ph">
+              pedepartment@cmu.edu.ph
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">&#9906;</div>
+          <div>
+            <strong>LOCATION</strong>
+            <span>
+              College of Education,
+              Central Mindanao University,
+              Musuan, Maramag, Bukidnon
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  &copy; <span id="year"></span>
+  Central Mindanao University |
+  Department of Physical Education
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
