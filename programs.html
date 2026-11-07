@@ -98,6 +98,7 @@ nav {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 nav a {
@@ -109,6 +110,66 @@ nav a {
 nav a:hover,
 nav a.active {
   color: var(--gold);
+}
+
+/* RESOURCES DROPDOWN - AUTOMATIC HOVER */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.dropdown-btn:hover,
+.dropdown:focus-within .dropdown-btn {
+  color: var(--gold);
+}
+
+/* DARK DROPDOWN MENU */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 245px;
+  padding: 12px 0;
+  background: #222222;
+  box-shadow: 0 8px 20px #00000030;
+  z-index: 100;
+}
+
+.dropdown-content a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  font-size: 13px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible {
+  background: #333333;
+  color: var(--gold);
+}
+
+/* OPEN AUTOMATICALLY ON HOVER */
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
 }
 
 /* HERO BANNER */
@@ -258,7 +319,8 @@ footer {
 
 /* ACCESSIBILITY */
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
 }
@@ -273,6 +335,11 @@ a:focus-visible {
 
   nav {
     gap: 12px;
+  }
+
+  .dropdown-content {
+    left: 0;
+    width: 230px;
   }
 }
 
@@ -304,7 +371,8 @@ a:focus-visible {
     font-size: 11px;
   }
 
-  nav a {
+  nav a,
+  .dropdown-btn {
     font-size: 12px;
   }
 
@@ -372,16 +440,61 @@ a:focus-visible {
 
     </div>
 
+    <!-- NAVIGATION BAR -->
+
     <nav aria-label="Main navigation">
+
       <a href="index.html#home">Home</a>
+
       <a href="about.html">About</a>
-      <a href="programs.html" class="active" aria-current="page">
+
+      <a href="programs.html"
+         class="active"
+         aria-current="page">
         BPEd Program
       </a>
-      <a href="faculty.html">Faculty &amp; Staff</a>
-      <a href="research.html">Research and Extension</a>
-      <a href="resources.html">Resources</a>
+
+      <a href="faculty.html">
+        Faculty &amp; Staff
+      </a>
+
+      <a href="research.html">
+        Research and Extension
+      </a>
+
+      <!-- RESOURCES DROPDOWN -->
+
+      <div class="dropdown">
+
+        <button
+          class="dropdown-btn"
+          type="button"
+          aria-haspopup="true"
+          aria-controls="resources-menu">
+          Resources
+          <span aria-hidden="true">▾</span>
+        </button>
+
+        <div class="dropdown-content" id="resources-menu">
+
+          <a href="resources.html#forms">
+            Downloadable Forms
+          </a>
+
+          <a href="resources.html#handbook">
+            BPEd Handbook
+          </a>
+
+          <a href="resources.html#pathfit">
+            PATHFIT Orientation
+          </a>
+
+        </div>
+
+      </div>
+
       <a href="contact.html">Contact</a>
+
     </nav>
 
   </div>
