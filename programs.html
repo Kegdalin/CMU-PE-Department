@@ -3,57 +3,107 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Academic Programs | CMU Physical Education</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BPEd Program | CMU Physical Education Department</title>
 
 <style>
 :root {
-  --green: #064420;
-  --dark: #032d17;
-  --gold: #efb331;
+  --green: #063e23;
+  --gold: #edb83c;
+  --ink: #173329;
+  --light: #f5f7f5;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  font: 16px/1.75 Arial, sans-serif;
-  color: #25352c;
-  background: #f5f8f5;
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--light);
 }
 
+/* HEADER */
+
 header {
-  background: var(--dark);
-  padding: 20px 6%;
+  background: var(--green);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 10px #0002;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 18px;
+  padding: 12px 20px;
 }
+
+/* UNIVERSITY LOGOS */
 
 .brand {
-  color: white;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
 }
 
-.brand small {
-  display: block;
-  font-weight: normal;
-  color: #e5d6a2;
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
+.header-logos img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brand-text strong {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+}
+
+.brand-text small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #d7e7da;
+  margin-top: 3px;
+}
+
+/* NAVIGATION */
 
 nav {
   display: flex;
+  gap: 16px;
   flex-wrap: wrap;
-  gap: 18px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
 }
 
 nav a:hover,
@@ -61,41 +111,66 @@ nav a.active {
   color: var(--gold);
 }
 
+/* HERO BANNER */
+
 .hero {
-  background: linear-gradient(125deg, #064420, #0c6333);
-  padding: 56px 20px;
+  background:
+    linear-gradient(
+      rgba(0, 35, 20, 0.55),
+      rgba(0, 35, 20, 0.55)
+    ),
+    url("images/pe%20banner.jpg");
+
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+
   color: white;
   text-align: center;
+  min-height: 350px;
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
-  margin: 0;
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  margin: 0 0 10px;
 }
 
 .hero p {
-  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 5px auto 8px;
+  max-width: 660px;
 }
 
+/* MAIN CONTENT */
+
 main {
-  max-width: 1050px;
-  margin: 40px auto 65px;
-  padding: 0 20px;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 45px 20px 65px;
 }
 
 .document {
   background: white;
-  border-radius: 14px;
-  padding: clamp(22px, 5vw, 55px);
-  box-shadow: 0 5px 22px #0001;
+  border-radius: 12px;
+  padding: clamp(22px, 5vw, 50px);
+  box-shadow: 0 4px 20px #00000012;
 }
 
 .document h2 {
   color: var(--green);
-  font-size: 23px;
-  margin: 35px 0 10px;
-  border-bottom: 2px solid var(--gold);
-  padding-bottom: 8px;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 35px 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--gold);
 }
 
 .document h2:first-child {
@@ -104,170 +179,582 @@ main {
 
 .document h3 {
   color: var(--green);
-  font-size: 19px;
-  margin: 28px 0 8px;
+  font-size: 20px;
+  margin: 25px 0 10px;
+  line-height: 1.3;
 }
 
 .document p {
-  margin: 8px 0 14px;
+  margin: 10px 0 15px;
+  line-height: 1.6;
   text-align: justify;
 }
 
-.document .milestone {
-  white-space: pre-wrap;
-  margin: 4px 0;
+.document ol {
+  padding-left: 25px;
+  margin: 12px 0 25px;
 }
 
+.document li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 5px;
+}
+
+/* MILESTONES */
+
+.milestones {
+  margin-top: 20px;
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+}
+
+.milestone {
+  position: relative;
+  margin: 0 0 18px;
+  padding: 15px 18px;
+  background: #f4f8f4;
+  border-radius: 8px;
+  border: 1px solid #e1eae2;
+  line-height: 1.5;
+}
+
+.milestone strong {
+  color: var(--green);
+  font-size: 17px;
+}
+
+/* PROSPECTUS BUTTON */
+
+.prospectus-link {
+  text-align: center;
+  margin: 35px 0 5px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #12683e;
+}
+
+/* FOOTER */
+
 footer {
-  background: var(--dark);
+  background: var(--green);
   color: white;
   text-align: center;
-  padding: 25px;
+  padding: 30px 20px;
+  font-size: 13px;
 }
+
+/* ACCESSIBILITY */
 
 a:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
 }
 
-@media(max-width:650px) {
-  header { align-items: flex-start; }
-  nav { gap: 12px; }
-  .document p { text-align: left; }
+/* TABLET */
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+  .nav {
+    padding: 12px 16px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .header-logos {
+    gap: 6px;
+  }
+
+  .header-logos img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .brand-text small {
+    font-size: 11px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 300px;
+    padding: 45px 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 38px);
+  }
+
+  main {
+    padding: 35px 18px;
+  }
+
+  .document {
+    padding: 22px 18px;
+  }
+
+  .document h2 {
+    font-size: 24px;
+  }
+
+  .document h3 {
+    font-size: 18px;
+  }
+
+  .document p {
+    text-align: left;
+  }
+
+  .milestones {
+    padding-left: 12px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="brand">
-    CMU PHYSICAL EDUCATION
-    <small>Central Mindanao University | College of Education</small>
-  </div>
+<!-- HEADER -->
 
-  <nav aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About</a>
-    <a class="active" href="programs.html">Academic Programs</a>
-    <a href="faculty.html">Faculty &amp; Staff</a>
-    <a href="index.html#research">Research</a>
-    <a href="index.html#resources">Resources</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
+<header>
+  <div class="nav">
+
+    <div class="brand">
+
+      <div class="header-logos">
+        <img
+          src="images/cmu-logo.png"
+          alt="Central Mindanao University Logo"
+        >
+
+        <img
+          src="images/educ-logo.png"
+          alt="College of Education Logo"
+        >
+      </div>
+
+      <div class="brand-text">
+        <strong>CENTRAL MINDANAO UNIVERSITY</strong>
+        <small>College of Education</small>
+      </div>
+
+    </div>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="programs.html" class="active" aria-current="page">
+        BPEd Program
+      </a>
+      <a href="faculty.html">Faculty &amp; Staff</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+  </div>
 </header>
 
-<div class="hero">
-  <h1>Academic Programs</h1>
-  <p>Department of Physical Education · Central Mindanao University</p>
-</div>
+<!-- HERO BANNER -->
+
+<section class="hero">
+
+  <h1>Bachelor of Physical Education</h1>
+
+  <p>
+    Department of Physical Education
+  </p>
+
+  <p>
+    College of Education · Central Mindanao University
+  </p>
+
+</section>
+
+<!-- MAIN CONTENT -->
 
 <main>
 <article class="document">
 
+<!-- UNIVERSITY VISION -->
+
 <h2>Vision of the University</h2>
-<p>A leading ASEAN university actively committed to the total development of people for a globally sustainable environment and a humane society.</p>
+
+<p>
+A leading ASEAN university actively committed to the total
+development of people for a globally sustainable environment
+and a humane society.
+</p>
+
+<!-- UNIVERSITY MISSION -->
 
 <h2>Mission of the University</h2>
-<p>To advance the frontier of knowledge through internationalization of education and equitable access to quality instruction, research, extension and production.</p>
+
+<p>
+To advance the frontier of knowledge through internationalization
+of education and equitable access to quality instruction,
+research, extension and production.
+</p>
+
+<!-- COLLEGE GOALS -->
 
 <h2>College Goals</h2>
-<p>The College is committed to pursue excellence and total quality education which aims to develop highly competent and morally upright teachers and leaders comparable to international standards in the content, pedagogy and instructional leadership.</p>
+
+<p>
+The College is committed to pursue excellence and total quality
+education which aims to develop highly competent and morally
+upright teachers and leaders comparable to international
+standards in the content, pedagogy and instructional leadership.
+</p>
+
+<!-- COLLEGE OBJECTIVES -->
 
 <h2>College Objectives</h2>
+
 <ol type="a">
-  <li>To produce highly competent teachers imbued with desirable character traits, equipped with scientific and evidence-based knowledge through a variety of teaching and learning experiences that foster academic breadth and skills training;</li>
-  <li>To equip teachers to be effective facilitators of learning and responsive to the challenges of the global classroom through keeping abreast with the latest trends in teaching to meet current and future needs of students and community;</li>
-  <li>To provide teachers with opportunities to the attainment of sustainable development to achieve a clear progression beyond basic and undergraduate education by stressing higher competencies in knowledge application and utilization; and</li>
-  <li>To train teachers to apply educational theories and practices through research, extension and production endeavors.</li>
+
+<li>
+To produce highly competent teachers imbued with desirable
+character traits, equipped with scientific and evidence-based
+knowledge through a variety of teaching and learning experiences
+that foster academic breadth and skills training;
+</li>
+
+<li>
+To equip teachers to be effective facilitators of learning
+and responsive to the challenges of the global classroom
+through keeping abreast with the latest trends in teaching
+to meet current and future needs of students and community;
+</li>
+
+<li>
+To provide teachers with opportunities to the attainment
+of sustainable development to achieve a clear progression
+beyond basic and undergraduate education by stressing
+higher competencies in knowledge application and utilization; and
+</li>
+
+<li>
+To train teachers to apply educational theories and practices
+through research, extension and production endeavors.
+</li>
+
 </ol>
+
+<!-- DEPARTMENT OBJECTIVES -->
 
 <h2>Objectives of the Physical Education Department</h2>
+
 <ol type="a">
-  <li>To provide training in Physical Education and related socio-cultural activities of CMU students;</li>
-  <li>To contribute to Physical Education Theory and Practice through research activities;</li>
-  <li>To develop awareness of the natural environment and the need for its production and conservation through outdoor and aquatic activities; and</li>
-  <li>To promote Physical Education through an outreach program in sports, physical fitness and socio-cultural activities.</li>
+
+<li>
+To provide training in Physical Education and related
+socio-cultural activities of CMU students;
+</li>
+
+<li>
+To contribute to Physical Education Theory and Practice
+through research activities;
+</li>
+
+<li>
+To develop awareness of the natural environment and the
+need for its production and conservation through outdoor
+and aquatic activities; and
+</li>
+
+<li>
+To promote Physical Education through an outreach program
+in sports, physical fitness and socio-cultural activities.
+</li>
+
 </ol>
 
+<!-- BPED OBJECTIVES -->
+
 <h2>Objectives of the BPEd Program</h2>
+
 <ol>
-  <li>Glocally competent and passionate teachers engaged in the holistic development of learners;</li>
-  <li>Effective implementers and facilitators of programs and services at all educational levels imbued with desirable values as well as pedagogical content knowledge and skills essential to the development of learners; and,</li>
-  <li>Actively engaged in research, development, extension and expert services on various educational program.</li>
+
+<li>
+Glocally competent and passionate teachers engaged
+in the holistic development of learners;
+</li>
+
+<li>
+Effective implementers and facilitators of programs
+and services at all educational levels imbued with
+desirable values as well as pedagogical content
+knowledge and skills essential to the development
+of learners; and,
+</li>
+
+<li>
+Actively engaged in research, development, extension
+and expert services on various educational program.
+</li>
+
 </ol>
+
+<!-- PROGRAM HISTORY -->
 
 <h2>Introduction/History of the BPEd Program</h2>
 
-<p>The Department of Physical Education (DPE) is one of the oldest academic units of the College of Education of Central Mindanao University (CMU). Its history is closely interwoven with the growth of the University itself — from a vocational agricultural school into a leading ASEAN university — and today it is home to the Bachelor of Physical Education (BPEd) program, which is currently undergoing accreditation by the Accrediting Agency of Chartered Colleges and Universities in the Philippines (AACCUP).</p>
+<p>
+The Department of Physical Education (DPE) is one of the oldest
+academic units of the College of Education of Central Mindanao
+University (CMU). Its history is closely interwoven with the
+growth of the University itself — from a vocational agricultural
+school into a leading ASEAN university — and today it is home
+to the Bachelor of Physical Education (BPEd) program, which
+is currently undergoing accreditation by the Accrediting
+Agency of Chartered Colleges and Universities in the
+Philippines (AACCUP).
+</p>
 
 <h3>Historical Roots</h3>
-<p>CMU began in 1946 as the Bukidnon National Agricultural School (BNAS), where, influenced by the American educational system, Physical Education and Health were already part of the curriculum. In 1952, BNAS was elevated into the Mindanao Agricultural College (MAC) by virtue of Republic Act No. 807, with Physical Education operating as one of the units of the Department of Agricultural Education. When MAC was converted into Central Mindanao University in 1965 through Republic Act No. 4498, the Department of Agricultural Education became the College of Education, and the Department of Physical Education continued as one of its units headed by a Chairperson. In 1970, the Board of Regents approved the Bachelor of Science in Education (BSED), while the DPE maintained its role as the service unit delivering physical education across all colleges of the University.</p>
+
+<p>
+CMU began in 1946 as the Bukidnon National Agricultural School
+(BNAS), where, influenced by the American educational system,
+Physical Education and Health were already part of the curriculum.
+In 1952, BNAS was elevated into the Mindanao Agricultural College
+(MAC) by virtue of Republic Act No. 807, with Physical Education
+operating as one of the units of the Department of Agricultural
+Education. When MAC was converted into Central Mindanao University
+in 1965 through Republic Act No. 4498, the Department of
+Agricultural Education became the College of Education, and
+the Department of Physical Education continued as one of its
+units headed by a Chairperson. In 1970, the Board of Regents
+approved the Bachelor of Science in Education (BSED), while
+the DPE maintained its role as the service unit delivering
+physical education across all colleges of the University.
+</p>
 
 <h3>A Tradition of Service and Leadership</h3>
-<p>Consistent with the University's trilogy of functions in instruction, research, and extension, the DPE committed itself to service physical education for the entire University. For decades, its faculty and students carried out their “labor of love” — training and coaching athletes and leading the University's sports, socio-cultural, physical fitness, and recreational life, from Calisthenics in the 1960s, to Siglakas in the 1970s–90s, Hataw in the 1990s–2010s, and Zumba at present. The Department actively represented CMU in regional and national athletic and socio-cultural competitions (SCUAA), promoting the image of the University while serving as the source of its sports and recreation materials, equipment, and expertise.</p>
+
+<p>
+Consistent with the University's trilogy of functions in
+instruction, research, and extension, the DPE committed
+itself to service physical education for the entire University.
+For decades, its faculty and students carried out their
+“labor of love” — training and coaching athletes and leading
+the University's sports, socio-cultural, physical fitness,
+and recreational life, from Calisthenics in the 1960s,
+to Siglakas in the 1970s–90s, Hataw in the 1990s–2010s,
+and Zumba at present. The Department actively represented
+CMU in regional and national athletic and socio-cultural
+competitions (SCUAA), promoting the image of the University
+while serving as the source of its sports and recreation
+materials, equipment, and expertise.
+</p>
 
 <h3>From a Major to a Degree Program</h3>
-<p>The Department steadily built toward a full degree program — organizing the Siglakas Club (1972), conducting sports clinics and seminar-workshops, and sending faculty on MSPE scholarships to the University of the Philippines, Diliman (1995, 1996). In 1998, the College of Education offered the Bachelor of Secondary Education, major in Physical Education (BSED–PE). The first batch was recognized by the University Academic Council in 2002 and posted a remarkable 99% passing rate in the Licensure Examination for Teachers (LET). Over the following years the program produced its first Cum Laude graduates and its first sports-related coaches, establishing a solid foundation of academic and athletic excellence.</p>
+
+<p>
+The Department steadily built toward a full degree program —
+organizing the Siglakas Club (1972), conducting sports clinics
+and seminar-workshops, and sending faculty on MSPE scholarships
+to the University of the Philippines, Diliman (1995, 1996).
+In 1998, the College of Education offered the Bachelor of
+Secondary Education, major in Physical Education (BSED–PE).
+The first batch was recognized by the University Academic
+Council in 2002 and posted a remarkable 99% passing rate
+in the Licensure Examination for Teachers (LET).
+Over the following years the program produced its first
+Cum Laude graduates and its first sports-related coaches,
+establishing a solid foundation of academic and athletic excellence.
+</p>
 
 <h3>Birth of the Bachelor of Physical Education (BPEd) Program</h3>
-<p>In August 2017, in response to CHED Memorandum Order (CMO) No. 80, series of 2017, Prof. Procopio B. Galendez Jr. spearheaded the proposal to transform the BSED major in Physical Education into a stand-alone Bachelor of Physical Education (BPEd). On February 26, 2018, the Board of Regents approved the revised curriculum, and the BPEd was offered effective School Year 2018–2019. The curriculum underwent a minor revision in 2019 and a further revision in 2023 that adopted the PATHFIT 1–4 framework for the tertiary service courses. When the COVID-19 pandemic struck in 2020, the Department sustained the program by delivering it fully online.</p>
+
+<p>
+In August 2017, in response to CHED Memorandum Order (CMO)
+No. 80, series of 2017, Prof. Procopio B. Galendez Jr.
+spearheaded the proposal to transform the BSED major in
+Physical Education into a stand-alone Bachelor of Physical
+Education (BPEd). On February 26, 2018, the Board of Regents
+approved the revised curriculum, and the BPEd was offered
+effective School Year 2018–2019. The curriculum underwent
+a minor revision in 2019 and a further revision in 2023
+that adopted the PATHFIT 1–4 framework for the tertiary
+service courses. When the COVID-19 pandemic struck in 2020,
+the Department sustained the program by delivering it fully online.
+</p>
 
 <h3>Growth, Distinctions, and Leadership</h3>
-<p>The BPEd program has grown rapidly in both quality and reputation. Its first batch of graduates in 2022 produced 3 Magna Cum Laude and 39 Cum Laude graduates. The Department went on to produce its first-ever LET topnotcher in 2025 (Mr. Kenneth John N. Batausa, Top 7), followed in 2026 by two more topnotchers (Ms. Juvy Cristina M. Rosales, Top 5, and Mr. Hezziel N. Delima, Top 9). The Department has been led by its Chairpersons — Marylou C. Viloria, Crispin S. Quilang (2012), and Procopio B. Galendez Jr. (2015, and again from August 2025), who in 2023 became the first Doctorate degree holder of the Department. Under his leadership, the CMU Varsity Sports Scholarship Program was approved by the Board of Regents on November 26, 2025 and fully implemented in Academic Year 2026–2027.</p>
+
+<p>
+The BPEd program has grown rapidly in both quality and
+reputation. Its first batch of graduates in 2022 produced
+3 Magna Cum Laude and 39 Cum Laude graduates. The Department
+went on to produce its first-ever LET topnotcher in 2025
+(Mr. Kenneth John N. Batausa, Top 7), followed in 2026 by
+two more topnotchers (Ms. Juvy Cristina M. Rosales, Top 5,
+and Mr. Hezziel N. Delima, Top 9). The Department has been
+led by its Chairpersons — Marylou C. Viloria, Crispin S.
+Quilang (2012), and Procopio B. Galendez Jr. (2015, and
+again from August 2025), who in 2023 became the first
+Doctorate degree holder of the Department. Under his
+leadership, the CMU Varsity Sports Scholarship Program
+was approved by the Board of Regents on November 26, 2025
+and fully implemented in Academic Year 2026–2027.
+</p>
 
 <h3>The BPEd Program Under Accreditation</h3>
-<p>As a measure of its commitment to quality assurance, the Bachelor of Physical Education program is under accreditation by AACCUP. Building on the program's strong licensure performance, its expanding roster of honor graduates and topnotchers, and its growing research, extension, and sports-development initiatives, the Department is pursuing AACCUP Level IV, Cycle 2 accreditation (4th Survey) — affirming the program's alignment with national standards and with CMU's vision of the total development of people. The Bachelor of Physical Education program continues to grow, honing each prospective physical education teacher to be competent in every facet of their career.</p>
+
+<p>
+As a measure of its commitment to quality assurance, the
+Bachelor of Physical Education program is under accreditation
+by AACCUP. Building on the program's strong licensure
+performance, its expanding roster of honor graduates and
+topnotchers, and its growing research, extension, and
+sports-development initiatives, the Department is pursuing
+AACCUP Level IV, Cycle 2 accreditation (4th Survey) —
+affirming the program's alignment with national standards
+and with CMU's vision of the total development of people.
+The Bachelor of Physical Education program continues to
+grow, honing each prospective physical education teacher
+to be competent in every facet of their career.
+</p>
+
+<!-- KEY MILESTONES -->
 
 <h2>Key Milestones of the BPEd Program</h2>
 
-<p class="milestone">1998 — BSED major in Physical Education (BSED–PE) first offered by the College
-of Education.</p>
+<div class="milestones">
 
-<p class="milestone">2002 — First batch recognized by the Academic Council; 99% LET passing rate.</p>
+<div class="milestone">
+  <strong>1998</strong> — BSED major in Physical Education
+  (BSED–PE) first offered by the College of Education.
+</div>
 
-<p class="milestone">2017 — Proposal to shift to the BPEd program (per CHED CMO No. 80, s. 2017).</p>
+<div class="milestone">
+  <strong>2002</strong> — First batch recognized by the Academic
+  Council; 99% LET passing rate.
+</div>
 
-<p class="milestone">2018 — Board of Regents approved the BPEd curriculum (Feb. 26); offered
-effective SY 2018–2019.</p>
+<div class="milestone">
+  <strong>2017</strong> — Proposal to shift to the BPEd program
+  (per CHED CMO No. 80, s. 2017).
+</div>
 
-<p class="milestone">2019/
-2023 — Curriculum revisions; adoption of the PATHFIT 1–4 framework (2023).</p>
+<div class="milestone">
+  <strong>2018</strong> — Board of Regents approved the BPEd
+  curriculum (Feb. 26); offered effective SY 2018–2019.
+</div>
 
-<p class="milestone">2020 — BPEd delivered fully online during the COVID-19 pandemic.</p>
+<div class="milestone">
+  <strong>2019/2023</strong> — Curriculum revisions; adoption
+  of the PATHFIT 1–4 framework (2023).
+</div>
 
-<p class="milestone">2022 — First BPEd graduates — 3 Magna Cum Laude and 39 Cum Laude.</p>
+<div class="milestone">
+  <strong>2020</strong> — BPEd delivered fully online during
+  the COVID-19 pandemic.
+</div>
 
-<p class="milestone">2023 — Second BPEd graduates — 8 Magna Cum Laude and 42 Cum Laude.</p>
+<div class="milestone">
+  <strong>2022</strong> — First BPEd graduates —
+  3 Magna Cum Laude and 39 Cum Laude.
+</div>
 
-<p class="milestone">2024 — Third BPEd graduates — 7 Magna Cum Laude and 66 Cum Laude.</p>
+<div class="milestone">
+  <strong>2023</strong> — Second BPEd graduates —
+  8 Magna Cum Laude and 42 Cum Laude.
+</div>
 
-<p class="milestone">2025 — Fourth BPEd graduates — 3 Magna Cum Laude and 61 Cum Laude.</p>
+<div class="milestone">
+  <strong>2024</strong> — Third BPEd graduates —
+  7 Magna Cum Laude and 66 Cum Laude.
+</div>
 
-<p class="milestone">2025 — LET topnotcher produced; first-ever topnotcher in 2025 (Top 7)
-Mr. Kenneth John Batausa</p>
+<div class="milestone">
+  <strong>2025</strong> — Fourth BPEd graduates —
+  3 Magna Cum Laude and 61 Cum Laude.
+</div>
 
-<p class="milestone">2026 — Fourth BPEd graduates — 9 Magna Cum Laude and 71 Cum Laude.</p>
+<div class="milestone">
+  <strong>2025</strong> — LET topnotcher produced;
+  first-ever topnotcher (Top 7),
+  Mr. Kenneth John Batausa.
+</div>
 
-<p class="milestone">2026 — LET topnotchers produced; two more in 2026 (Top 5, Top 9)
-Ms. Juvy M. Cristina Rosales and Ms. Hezzeil N. Delima</p>
+<div class="milestone">
+  <strong>2026</strong> — Fourth BPEd graduates —
+  9 Magna Cum Laude and 71 Cum Laude.
+</div>
 
-<p class="milestone">2026 — BPEd program under AACCUP Level IV, Cycle 2 accreditation (4th
-Survey).</p>
+<div class="milestone">
+  <strong>2026</strong> — LET topnotchers produced;
+  two more in 2026 (Top 5, Top 9),
+  Ms. Juvy M. Cristina Rosales and
+  Ms. Hezzeil N. Delima.
+</div>
+
+<div class="milestone">
+  <strong>2026</strong> — BPEd program under AACCUP
+  Level IV, Cycle 2 accreditation (4th Survey).
+</div>
+
+</div>
 
 </article>
 
-<p style="text-align:center">
-  <a href="index.html#prospectus">
-    View the BPEd Prospectus on the homepage
+<!-- PROSPECTUS LINK -->
+
+<div class="prospectus-link">
+  <a href="index.html#prospectus" class="button">
+    View the BPEd Prospectus
   </a>
-</p>
+</div>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  &copy; 2026 Central Mindanao University | Department of Physical Education
+  &copy; <span id="year"></span>
+  Central Mindanao University |
+  Department of Physical Education
 </footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
 
 </body>
 </html>
