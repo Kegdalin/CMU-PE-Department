@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty & Staff | CMU Physical Education Department</title>
+
+<style>
+:root {
+  --green: #064420;
+  --dark: #032d17;
+  --gold: #efb331;
+  --text: #25352c;
+  --light: #f5f8f5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+header {
+  background: var(--dark);
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brand span {
+  display: block;
+  font-size: 12px;
+  color: #e5d6a2;
+  font-weight: normal;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold);
+}
+
+.hero {
+  background: linear-gradient(125deg, #064420, #0c6333);
+  padding: 65px 20px;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(29px, 4vw, 44px);
+  margin: 0 0 10px;
+}
+
+.hero p {
+  margin: 0;
+  color: #e7f1e9;
+}
+
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 50px 20px 80px;
+}
+
+.section-title {
+  font-size: 28px;
+  color: var(--green);
+  margin: 0 0 12px;
+}
+
+.accent-line {
+  width: 70px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.section-description {
+  color: #65746b;
+  margin-bottom: 28px;
+}
+
+.chairperson {
+  max-width: 480px;
+  margin: 0 auto 65px;
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px 30px;
+  margin-bottom: 65px;
+}
+
+.faculty-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  border: 1px solid #e5ebe5;
+}
+
+.faculty-card img {
+  display: block;
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: center top;
+  background: #e7eee8;
+}
+
+.faculty-info {
+  padding: 22px 20px 25px;
+  text-align: center;
+}
+
+.faculty-info h3 {
+  color: var(--green);
+  font-size: 19px;
+  margin: 0 0 7px;
+}
+
+.faculty-info p {
+  color: #65746b;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.role {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #946300;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+  font-size: 13px;
+}
+
+@media(max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav { gap: 12px; }
+
+  .faculty-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-card img {
+    height: 400px;
+  }
+
+  .chairperson {
+    max-width: 100%;
+  }
+
+  main {
+    padding: 35px 15px 55px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    CMU PHYSICAL EDUCATION
+    <span>Central Mindanao University | College of Education</span>
+  </div>
+
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="programs.html">Academic Programs</a>
+    <a href="faculty.html" class="active">Faculty &amp; Staff</a>
+    <a href="index.html#research">Research</a>
+    <a href="index.html#resources">Resources</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Faculty &amp; Staff</h1>
+  <p>
+    Department of Physical Education
+    <br>
+    College of Education | Central Mindanao University
+  </p>
+</section>
+
+<main>
+
+  <!-- DEPARTMENT CHAIRPERSON -->
+  <section>
+    <h2 class="section-title">Department Chairperson</h2>
+    <div class="accent-line"></div>
+
+    <div class="chairperson">
+      <article class="faculty-card">
+        <img src="images/galendez.jpg"
+             alt="Procopio B. Galendez Jr."
+             loading="lazy">
+
+        <div class="faculty-info">
+          <span class="role">Department Chairperson</span>
+          <h3>Procopio B. Galendez Jr.</h3>
+          <p>Doctor of Education major in Physical Education</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FACULTY MEMBERS -->
+  <section>
+    <h2 class="section-title">Faculty Members</h2>
+    <div class="accent-line"></div>
+
+    <p class="section-description">
+      Meet the faculty members of the Department of
+      Physical Education, Central Mindanao University.
+    </p>
+
+    <div class="faculty-grid" id="facultyGrid"></div>
+  </section>
+
+  <!-- DEPARTMENT STAFF -->
+  <section>
+    <h2 class="section-title">Department Staff</h2>
+    <div class="accent-line"></div>
+
+    <div class="faculty-grid" id="staffGrid"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    &copy; 2026 Central Mindanao University |
+    Department of Physical Education
+  </p>
+  <p>College of Education | Musuan, Maramag, Bukidnon</p>
+</footer>
+
+<script>
+const faculty = [
+  [
+    "Hannah Lovelle R. Abiabi",
+    "Master of Arts in Education major in Sports and Physical Education",
+    "abiabi.jpg"
+  ],
+  [
+    "Sherille Love B. Asequia",
+    "Doctor of Philosophy in Education major in Physical Education",
+    "asequia.jpg"
+  ],
+  [
+    "Rhandie S. Balane",
+    "Master in Education Major in Teaching Physical Education",
+    "balane.jpg"
+  ],
+  [
+    "Ricardo IV R. Bunghanoy",
+    "Doctor of Philosophy in Education major in Physical Education",
+    "bunghanoy.jpg"
+  ],
+  [
+    "Norjohn Francis G. Cadeliña",
+    "Master of Arts in Education Major in Physical Education",
+    "cadelina.jpg"
+  ],
+  [
+    "Dana Rica P. Cabahug",
+    "Master of Arts in Education major in Physical Education (ongoing)",
+    "cabahug.jpg"
+  ],
+  [
+    "Eldan Jiego V. Davin",
+    "Master in Education Major in Teaching Physical Education",
+    "davin.jpg"
+  ],
+  [
+    "Pamela Christine H. Escañer",
+    "Doctor of Philosophy in Education major in Physical Education",
+    "escaner.jpg"
+  ],
+  [
+    "Shaira L. Ganancial",
+    "Master of Arts in Education major in Physical Education (ongoing)",
+    "ganancial.jpg"
+  ],
+  [
+    "Art Jude C. Goopio",
+    "Master of Science in Physical Education (ongoing)",
+    "goopio.jpg"
+  ],
+  [
+    "Mark Bryan T. Inso",
+    "Master of Arts in Education major in Physical Education (ongoing)",
+    "inso.jpg"
+  ],
+  [
+    "Angeline C. Limocon",
+    "Doctor of Education major in Physical Education",
+    "limocon.jpg"
+  ],
+  [
+    "Kara Angela Egdalin-Opiso",
+    "Master of Arts in Education major in Physical Education",
+    "opiso.jpg"
+  ],
+  [
+    "Lirena May M. Panisales",
+    "Master of Arts in Education major in Physical Education (ongoing)",
+    "panisales.jpg"
+  ],
+  [
+    "Genifer C. Ramoso",
+    "Doctor of Philosophy in Physical Education (ongoing)",
+    "ramoso.jpg"
+  ],
+  [
+    "Crispin S. Quilang",
+    "Doctor of Education major in Physical Education (CAR)",
+    "quilang.jpg"
+  ],
+  [
+    "Dianne L. Salvaleon",
+    "Master of Teaching Early Childhood; Master of Human Movement Science (ongoing)",
+    "salvaleon.jpg"
+  ]
+];
+
+const staff = [
+  [
+    "Waren S. Camarillo",
+    "Department Staff",
+    "camarillo.jpg"
+  ],
+  [
+    "Rey B. Galendez",
+    "Department Staff",
+    "rey-galendez.jpg"
+  ]
+];
+
+function createCard(person) {
+  const [name, qualification, photo] = person;
+
+  const card = document.createElement("article");
+  card.className = "faculty-card";
+
+  const img = document.createElement("img");
+  img.src = "images/" + photo;
+  img.alt = name;
+  img.loading = "lazy";
+
+  const info = document.createElement("div");
+  info.className = "faculty-info";
+
+  const heading = document.createElement("h3");
+  heading.textContent = name;
+
+  const description = document.createElement("p");
+  description.textContent = qualification;
+
+  info.append(heading, description);
+  card.append(img, info);
+
+  return card;
+}
+
+const facultyGrid = document.getElementById("facultyGrid");
+const staffGrid = document.getElementById("staffGrid");
+
+faculty.forEach(person => {
+  facultyGrid.appendChild(createCard(person));
+});
+
+staff.forEach(person => {
+  staffGrid.appendChild(createCard(person));
+});
+</script>
+
+</body>
+</html>
