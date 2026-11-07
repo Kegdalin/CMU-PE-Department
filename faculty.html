@@ -4,61 +4,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faculty & Staff </title>
+
+<title>Faculty & Staff | CMU Physical Education Department</title>
 
 <style>
 :root {
-  --green: #064420;
-  --dark: #032d17;
-  --gold: #efb331;
-  --text: #25352c;
-  --light: #f5f8f5;
+  --green: #063e23;
+  --gold: #edb83c;
+  --ink: #173329;
+  --light: #f5f7f5;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
+  color: var(--ink);
   background: var(--light);
-  color: var(--text);
-  line-height: 1.7;
 }
+
+/* HEADER - SAME AS HOMEPAGE */
 
 header {
-  background: var(--dark);
+  background: var(--green);
   color: white;
-  padding: 18px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 10px #0002;
 }
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 20px;
+}
+
+/* LOGOS AND UNIVERSITY NAME */
 
 .brand {
-  font-size: 18px;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
 }
 
-.brand span {
-  display: block;
-  font-size: 12px;
-  color: #e5d6a2;
-  font-weight: normal;
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
+.header-logos img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brand-text strong {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+}
+
+.brand-text small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #d7e7da;
+  margin-top: 3px;
+}
+
+/* NAVIGATION */
 
 nav {
   display: flex;
+  gap: 16px;
   flex-wrap: wrap;
-  gap: 18px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
 }
 
 nav a:hover,
@@ -66,92 +111,127 @@ nav a.active {
   color: var(--gold);
 }
 
+/* HERO - SAME PHOTO AS HOMEPAGE */
+
 .hero {
-  background: linear-gradient(125deg, #064420, #0c6333);
-  padding: 65px 20px;
+  background:
+    linear-gradient(
+      rgba(0, 35, 20, 0.55),
+      rgba(0, 35, 20, 0.55)
+    ),
+    url("images/pe%20banner.jpg");
+
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+
   color: white;
   text-align: center;
+
+  min-height: 350px;
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
-  font-size: clamp(29px, 4vw, 44px);
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
   margin: 0 0 10px;
 }
 
 .hero p {
-  margin: 0;
-  color: #e7f1e9;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 5px auto 8px;
+  max-width: 660px;
 }
 
+/* MAIN CONTENT */
+
 main {
-  max-width: 1120px;
+  max-width: 1150px;
   margin: auto;
-  padding: 50px 20px 80px;
+  padding: 45px 20px;
+}
+
+main section {
+  margin-bottom: 55px;
 }
 
 .section-title {
-  font-size: 28px;
+  font-size: 30px;
   color: var(--green);
-  margin: 0 0 12px;
-}
-
-.accent-line {
-  width: 70px;
-  height: 4px;
-  background: var(--gold);
-  border-radius: 5px;
-  margin-bottom: 30px;
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 12px;
+  margin: 0 0 18px;
+  line-height: 1.2;
 }
 
 .section-description {
   color: #65746b;
-  margin-bottom: 28px;
+  margin: 10px 0 25px;
+  line-height: 1.5;
 }
 
+/* FACULTY GRID */
+
 .chairperson {
-  max-width: 480px;
-  margin: 0 auto 65px;
+  max-width: 400px;
+  margin: 25px auto 0;
 }
 
 .faculty-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 35px 30px;
-  margin-bottom: 65px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 25px;
 }
+
+/* FACULTY CARDS */
 
 .faculty-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
   border: 1px solid #e5ebe5;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.faculty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .faculty-card img {
   display: block;
   width: 100%;
-  height: 440px;
+  height: 350px;
   object-fit: cover;
   object-position: center top;
   background: #e7eee8;
 }
 
 .faculty-info {
-  padding: 22px 20px 25px;
+  padding: 20px;
   text-align: center;
 }
 
 .faculty-info h3 {
   color: var(--green);
-  font-size: 19px;
-  margin: 0 0 7px;
+  font-size: 18px;
+  margin: 0 0 8px;
+  line-height: 1.3;
 }
 
 .faculty-info p {
   color: #65746b;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -165,24 +245,88 @@ main {
   letter-spacing: 1px;
 }
 
+/* FOOTER */
+
 footer {
-  background: var(--dark);
+  background: var(--green);
   color: white;
   text-align: center;
-  padding: 28px 15px;
+  padding: 30px 20px;
   font-size: 13px;
 }
 
-@media(max-width: 700px) {
-  header {
+footer p {
+  margin: 5px 0;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .nav {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  nav { gap: 12px; }
+  nav {
+    gap: 12px;
+  }
+
+  .faculty-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .nav {
+    padding: 12px 16px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .header-logos {
+    gap: 6px;
+  }
+
+  .header-logos img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .brand-text small {
+    font-size: 11px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 300px;
+    padding: 45px 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 38px);
+  }
+
+  main {
+    padding: 35px 18px;
+  }
 
   .faculty-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .faculty-card img {
@@ -193,67 +337,112 @@ footer {
     max-width: 100%;
   }
 
-  main {
-    padding: 35px 15px 55px;
+  .section-title {
+    font-size: 26px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="brand">
-    CMU PHYSICAL EDUCATION
-    <span>Central Mindanao University | College of Education</span>
-  </div>
+<!-- HEADER -->
 
-  <nav aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About</a>
-    <a href="programs.html">Academic Programs</a>
-    <a href="faculty.html" class="active">Faculty &amp; Staff</a>
-    <a href="index.html#research">Research</a>
-    <a href="index.html#resources">Resources</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
+<header>
+  <div class="nav">
+
+    <div class="brand">
+
+      <div class="header-logos">
+        <img
+          src="images/cmu-logo.png"
+          alt="Central Mindanao University Logo"
+        >
+
+        <img
+          src="images/educ-logo.png"
+          alt="College of Education Logo"
+        >
+      </div>
+
+      <div class="brand-text">
+        <strong>CENTRAL MINDANAO UNIVERSITY</strong>
+        <small>College of Education</small>
+      </div>
+
+    </div>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="programs.html">BPEd Program</a>
+      <a href="faculty.html" class="active" aria-current="page">
+        Faculty &amp; Staff
+      </a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+  </div>
 </header>
 
+<!-- HERO BANNER -->
+
 <section class="hero">
+
   <h1>Faculty &amp; Staff</h1>
+
   <p>
     Department of Physical Education
-    <br>
-    College of Education | Central Mindanao University
   </p>
+
+  <p>
+    College of Education · Central Mindanao University
+  </p>
+
 </section>
 
 <main>
 
   <!-- DEPARTMENT CHAIRPERSON -->
+
   <section>
     <h2 class="section-title">Department Chairperson</h2>
-    <div class="accent-line"></div>
 
     <div class="chairperson">
+
       <article class="faculty-card">
-        <img src="images/galendez.jpg"
-             alt="Procopio B. Galendez Jr."
-             loading="lazy">
+
+        <img
+          src="images/galendez.jpg"
+          alt="Procopio B. Galendez Jr."
+          loading="lazy"
+        >
 
         <div class="faculty-info">
+
           <span class="role">Department Chairperson</span>
+
           <h3>Procopio B. Galendez Jr.</h3>
-          <p>Doctor of Education major in Physical Education</p>
+
+          <p>
+            Doctor of Education major in Physical Education
+          </p>
+
         </div>
+
       </article>
+
     </div>
   </section>
 
   <!-- FACULTY MEMBERS -->
+
   <section>
+
     <h2 class="section-title">Faculty Members</h2>
-    <div class="accent-line"></div>
 
     <p class="section-description">
       Meet the faculty members of the Department of
@@ -261,27 +450,41 @@ footer {
     </p>
 
     <div class="faculty-grid" id="facultyGrid"></div>
+
   </section>
 
   <!-- DEPARTMENT STAFF -->
+
   <section>
+
     <h2 class="section-title">Department Staff</h2>
-    <div class="accent-line"></div>
 
     <div class="faculty-grid" id="staffGrid"></div>
+
   </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
+
   <p>
-    &copy; 2026 Central Mindanao University |
+    &copy; <span id="year"></span>
+    Central Mindanao University |
     Department of Physical Education
   </p>
-  <p>College of Education | Musuan, Maramag, Bukidnon</p>
+
+  <p>
+    College of Education · Musuan, Maramag, Bukidnon
+  </p>
+
 </footer>
 
 <script>
+
+/* FACULTY DATA */
+
 const faculty = [
   [
     "Hannah Lovelle R. Abiabi",
@@ -370,6 +573,8 @@ const faculty = [
   ]
 ];
 
+/* STAFF DATA */
+
 const staff = [
   [
     "Waren S. Camarillo",
@@ -383,7 +588,10 @@ const staff = [
   ]
 ];
 
+/* CREATE PROFILE CARD */
+
 function createCard(person) {
+
   const [name, qualification, photo] = person;
 
   const card = document.createElement("article");
@@ -409,6 +617,8 @@ function createCard(person) {
   return card;
 }
 
+/* DISPLAY FACULTY AND STAFF */
+
 const facultyGrid = document.getElementById("facultyGrid");
 const staffGrid = document.getElementById("staffGrid");
 
@@ -419,6 +629,12 @@ faculty.forEach(person => {
 staff.forEach(person => {
   staffGrid.appendChild(createCard(person));
 });
+
+/* AUTOMATIC YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
 </script>
 
 </body>
