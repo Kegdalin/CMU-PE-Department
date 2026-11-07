@@ -50,10 +50,13 @@ header {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .header-logos {
   display: flex;
+  align-items: center;
   gap: 8px;
   flex-shrink: 0;
 }
@@ -62,6 +65,7 @@ header {
   width: 52px;
   height: 52px;
   object-fit: contain;
+  display: block;
 }
 
 .brand-text {
@@ -73,12 +77,16 @@ header {
 .brand-text strong {
   font-size: 18px;
   font-weight: 800;
+  color: white;
 }
 
 .brand-text small {
   font-size: 12px;
   color: #d7e7da;
+  margin-top: 3px;
 }
+
+/* NAVIGATION */
 
 nav {
   display: flex;
@@ -125,12 +133,7 @@ nav a.active {
 .hero h1 {
   font-size: clamp(30px, 5vw, 46px);
   line-height: 1.15;
-  margin: 0 0 10px;
-}
-
-.hero p {
-  font-size: 16px;
-  margin: 5px 0;
+  margin: 0;
 }
 
 /* CONTACT CONTENT */
@@ -249,12 +252,23 @@ footer {
   font-size: 13px;
 }
 
-/* MOBILE */
+/* ACCESSIBILITY */
+
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* TABLET */
 
 @media (max-width: 900px) {
   .nav {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  nav {
+    gap: 12px;
   }
 
   .contact-panel {
@@ -263,7 +277,13 @@ footer {
   }
 }
 
+/* MOBILE */
+
 @media (max-width: 600px) {
+  .nav {
+    padding: 12px 16px;
+  }
+
   .header-logos img {
     width: 38px;
     height: 38px;
@@ -279,10 +299,6 @@ footer {
 
   .brand-text small {
     font-size: 11px;
-  }
-
-  nav {
-    gap: 12px;
   }
 
   nav a {
@@ -329,11 +345,15 @@ footer {
     <div class="brand">
 
       <div class="header-logos">
-        <img src="images/cmu-logo.png"
-             alt="CMU Logo">
+        <img
+          src="images/cmu-logo.png"
+          alt="CMU Logo"
+        >
 
-        <img src="images/educ-logo.png"
-             alt="College of Education Logo">
+        <img
+          src="images/educ-logo.png"
+          alt="College of Education Logo"
+        >
       </div>
 
       <div class="brand-text">
@@ -343,15 +363,30 @@ footer {
 
     </div>
 
+    <!-- NAVIGATION BAR -->
+
     <nav aria-label="Main navigation">
+
       <a href="index.html#home">Home</a>
-      <a href="index.html#about">About</a>
+
+      <a href="about.html">About</a>
+
       <a href="programs.html">BPEd Program</a>
+
       <a href="faculty.html">Faculty &amp; Staff</a>
-      <a href="index.html#research">Research</a>
-      <a href="index.html#resources">Resources</a>
-      <a href="contact.html" class="active"
-         aria-current="page">Contact</a>
+
+      <a href="research.html">Research and Extension</a>
+
+      <a href="resources.html">Resources</a>
+
+      <a
+        href="contact.html"
+        class="active"
+        aria-current="page"
+      >
+        Contact
+      </a>
+
     </nav>
 
   </div>
@@ -361,8 +396,6 @@ footer {
 
 <section class="hero">
   <h1>Contact Us</h1>
-  <p>Department of Physical Education</p>
-  <p>College of Education · Central Mindanao University</p>
 </section>
 
 <!-- CONTACT INFORMATION -->
@@ -371,14 +404,38 @@ footer {
 
   <div class="contact-panel">
 
-    <aside class="contact-sidebar">
-      <a href="index.html#about">About Us</a>
-      <a href="programs.html">BPEd Program</a>
-      <a href="faculty.html">Faculty &amp; Staff</a>
-      <a href="index.html#research">Research</a>
-      <a href="index.html#resources">Resources</a>
-      <a href="contact.html" class="active">Contact Us</a>
+    <!-- SIDE NAVIGATION -->
+
+    <aside class="contact-sidebar" aria-label="Page navigation">
+
+      <a href="about.html">
+        About Us
+      </a>
+
+      <a href="programs.html">
+        BPEd Program
+      </a>
+
+      <a href="faculty.html">
+        Faculty &amp; Staff
+      </a>
+
+      <a href="research.html">
+        Research and Extension
+      </a>
+
+      <a href="resources.html">
+        Resources
+      </a>
+
+      <a href="contact.html" class="active"
+         aria-current="page">
+        Contact Us
+      </a>
+
     </aside>
+
+    <!-- CONTACT DETAILS -->
 
     <div class="contact-content">
 
@@ -390,26 +447,42 @@ footer {
 
       <div class="contact-cards">
 
+        <!-- EMAIL -->
+
         <div class="contact-card">
-          <div class="contact-icon">&#9993;</div>
+
+          <div class="contact-icon" aria-hidden="true">
+            &#9993;
+          </div>
+
           <div>
             <strong>EMAIL</strong>
+
             <a href="mailto:pedepartment@cmu.edu.ph">
               pedepartment@cmu.edu.ph
             </a>
           </div>
+
         </div>
 
+        <!-- LOCATION -->
+
         <div class="contact-card">
-          <div class="contact-icon">&#9906;</div>
+
+          <div class="contact-icon" aria-hidden="true">
+            &#9906;
+          </div>
+
           <div>
             <strong>LOCATION</strong>
+
             <span>
               College of Education,
               Central Mindanao University,
               Musuan, Maramag, Bukidnon
             </span>
           </div>
+
         </div>
 
       </div>
