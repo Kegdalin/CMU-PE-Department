@@ -1,38 +1,630 @@
 
-<!-- NAVIGATION BAR -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<nav aria-label="Main navigation">
+<title>Home | CMU Physical Education Department</title>
 
-  <a
-    href="index.html#home"
-    class="active"
-    aria-current="page"
-  >
-    Home
-  </a>
+<style>
+:root {
+  --green: #063e23;
+  --gold: #edb83c;
+  --ink: #173329;
+  --light: #f5f7f5;
+}
 
-  <a href="index.html#about">
-    About
-  </a>
+* {
+  box-sizing: border-box;
+}
 
-  <a href="programs.html">
-    BPEd Program
-  </a>
+html {
+  scroll-behavior: smooth;
+}
 
-  <a href="faculty.html">
-    Faculty &amp; Staff
-  </a>
+body {
+  margin: 0;
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--light);
+}
 
-  <a href="research.html">
-    Research and Extension
-  </a>
+/* HEADER */
 
-  <a href="resources.html">
-    Resources
-  </a>
+header {
+  background: var(--green);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 10px #0002;
+}
 
-  <a href="contact.html">
-    Contact
-  </a>
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 20px;
+}
 
-</nav>
+/* UNIVERSITY LOGOS AND NAME */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.header-logos img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brand-text strong {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+}
+
+.brand-text small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #d7e7da;
+  margin-top: 3px;
+}
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold);
+}
+
+/* HERO BANNER */
+
+.hero {
+  background:
+    linear-gradient(
+      rgba(0, 35, 20, 0.55),
+      rgba(0, 35, 20, 0.55)
+    ),
+    url("images/pe%20banner.jpg");
+
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: center;
+  min-height: 350px;
+  padding: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 5px auto 8px;
+  max-width: 660px;
+}
+
+/* GENERAL SECTIONS */
+
+.wrap {
+  max-width: 1150px;
+  margin: auto;
+  padding: 45px 20px;
+}
+
+section {
+  scroll-margin-top: 110px;
+}
+
+h2 {
+  font-size: 30px;
+  color: var(--green);
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 12px;
+  margin: 0 0 18px;
+  line-height: 1.2;
+}
+
+h3 {
+  color: var(--green);
+}
+
+section p {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.intro {
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* ABOUT SECTION */
+
+#about {
+  background: #f5f7f5;
+}
+
+/* BUTTONS */
+
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #ffd777;
+}
+
+.button-green {
+  background: var(--green);
+  color: white;
+}
+
+.button-green:hover {
+  background: #12683e;
+}
+
+/* PROSPECTUS */
+
+.prospectus-section {
+  background: #eaf1ec;
+}
+
+.prospectus-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px #00000012;
+  margin-top: 25px;
+}
+
+.prospectus-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.prospectus-stats div {
+  background: #f4f8f4;
+  padding: 22px;
+  border-radius: 9px;
+  text-align: center;
+  border: 1px solid #e1eae2;
+}
+
+.prospectus-stats strong {
+  display: block;
+  color: var(--green);
+  font-size: 30px;
+}
+
+.prospectus-stats span {
+  font-size: 13px;
+  color: #5d6c62;
+}
+
+/* PDF BUTTONS */
+
+.pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.pdf-actions .button {
+  margin-top: 0;
+}
+
+/* PDF VIEWER */
+
+.pdf-preview {
+  background: #f2f5f2;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border: 1px solid #e0e8e0;
+}
+
+.pdf-preview iframe {
+  display: block;
+  width: 100%;
+  height: 750px;
+  border: 0;
+  border-radius: 6px;
+  background: white;
+}
+
+.pdf-note {
+  color: #5d6c62;
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 13px;
+}
+
+/* ACCESSIBILITY */
+
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+  .nav {
+    padding: 12px 16px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .header-logos {
+    gap: 6px;
+  }
+
+  .header-logos img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .brand-text small {
+    font-size: 11px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 300px;
+    padding: 45px 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 38px);
+  }
+
+  .wrap {
+    padding: 35px 18px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .prospectus-card {
+    padding: 20px;
+  }
+
+  .prospectus-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-preview iframe {
+    height: 480px;
+  }
+
+  .pdf-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pdf-actions .button {
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="nav">
+
+    <!-- UNIVERSITY BRANDING -->
+
+    <div class="brand">
+
+      <div class="header-logos">
+
+        <img
+          src="images/cmu-logo.png"
+          alt="Central Mindanao University Logo"
+        >
+
+        <img
+          src="images/educ-logo.png"
+          alt="College of Education Logo"
+        >
+
+      </div>
+
+      <div class="brand-text">
+        <strong>CENTRAL MINDANAO UNIVERSITY</strong>
+        <small>College of Education</small>
+      </div>
+
+    </div>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav aria-label="Main navigation">
+
+      <a
+        href="index.html#home"
+        class="active"
+        aria-current="page"
+      >
+        Home
+      </a>
+
+      <a href="index.html#about">
+        About
+      </a>
+
+      <a href="programs.html">
+        BPEd Program
+      </a>
+
+      <a href="faculty.html">
+        Faculty &amp; Staff
+      </a>
+
+      <a href="research.html">
+        Research and Extension
+      </a>
+
+      <a href="resources.html">
+        Resources
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HOMEPAGE BANNER -->
+
+<section class="hero" id="home">
+
+  <h1>Department of Physical Education</h1>
+
+  <p>
+    Central Mindanao University · Musuan, Maramag, Bukidnon
+  </p>
+
+  <p>
+    Mens Sana in Corpore Sano
+  </p>
+
+</section>
+
+<!-- ABOUT THE DEPARTMENT -->
+
+<section id="about">
+
+  <div class="wrap">
+
+    <h2>About the Department</h2>
+
+    <p class="intro">
+      Welcome to the Department of Physical Education
+      at Central Mindanao University. Explore our
+      programs, faculty, activities, and learning resources.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- BPEd PROSPECTUS -->
+
+<section id="prospectus" class="prospectus-section">
+
+  <div class="wrap">
+
+    <h2>Bachelor of Physical Education Prospectus</h2>
+
+    <p>
+      Explore the Bachelor of Physical Education (BPEd)
+      Curriculum Prospectus of Central Mindanao University.
+      The revised prospectus is effective April 1, 2023,
+      and follows CMO No. 80, series of 2017.
+    </p>
+
+    <div class="prospectus-card">
+
+      <!-- PROSPECTUS INFORMATION -->
+
+      <div class="prospectus-stats">
+
+        <div>
+          <strong>176</strong>
+          <span>Total Units</span>
+        </div>
+
+        <div>
+          <strong>4</strong>
+          <span>Year Levels</span>
+        </div>
+
+        <div>
+          <strong>2023</strong>
+          <span>Curriculum Revision</span>
+        </div>
+
+      </div>
+
+      <!-- PDF BUTTONS -->
+
+      <div class="pdf-actions">
+
+        <a
+          class="button button-green"
+          href="BPED-Prospectus-2023.pdf"
+          download="CMU-BPEd-Prospectus-2023.pdf"
+        >
+          &#8595; Download BPEd Prospectus
+        </a>
+
+        <a
+          class="button"
+          href="BPED-Prospectus-2023.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Open PDF in New Tab
+        </a>
+
+      </div>
+
+      <!-- PDF VIEWER -->
+
+      <div class="pdf-preview">
+
+        <iframe
+          src="BPED-Prospectus-2023.pdf"
+          title="BPEd Curriculum Prospectus 2023"
+        ></iframe>
+
+      </div>
+
+      <!-- PDF NOTES -->
+
+      <p class="pdf-note">
+        You may read the prospectus directly above
+        or use the Download button to save a copy
+        to your device.
+      </p>
+
+      <p class="pdf-note">
+        If the document does not display,
+        <a
+          href="BPED-Prospectus-2023.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          open the Prospectus PDF here.
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  &copy; <span id="year"></span>
+  Central Mindanao University |
+  Department of Physical Education
+
+</footer>
+
+<!-- AUTOMATIC YEAR -->
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
